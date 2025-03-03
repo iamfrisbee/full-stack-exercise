@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+
+  main {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto;
+    gap: 20px;
+  }
+}

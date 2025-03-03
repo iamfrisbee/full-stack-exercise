@@ -1,0 +1,25 @@
+{
+  "name": "altar",
+  "version": "1.0.0",
+  "description": "Full-Stack Exercise #1223",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": " "
+  },
+  "scripts": {
+    "dev:frontend": "npm run start --workspace=frontend",
+    "dev:backend": "npm run dev --workspace=backend",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\""
+  },
+  "keywords": [],
+  "author": "iamfrisbee",
+  "license": "ISC",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

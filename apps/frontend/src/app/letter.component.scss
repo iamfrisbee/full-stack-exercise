@@ -1,0 +1,25 @@
+.input-group {
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    color: #ddd;
+    font-size: 0.6rem;
+    font-weight: 700;
+  }
+
+  input {
+    outline: none;
+    border: solid 1px #ddd;
+    border-radius: 4px;
+    padding: 1rem;
+    width: 75px;
+    font-size: 0.8rem;
+    color: #ddd;
+    text-align: center;
+    
+    &::placeholder {
+      color: #ddd;
+    }
+  }
+}
