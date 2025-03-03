@@ -1,0 +1,44 @@
+h2 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #cdd;
+  margin: 0;
+}
+
+.payment-list {
+  display: grid;
+  grid-template-columns: 1fr 15% 15% 15%;
+  border-right: solid 1px #ddd;
+  border-bottom: solid 1px #ddd;
+
+  div {
+    border-top: solid 1px #ddd;
+    border-left: solid 1px #ddd;
+    font-size: 0.8rem;
+    color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+
+    &:nth-child(4n + 1) {
+      justify-content: flex-start;
+      padding-left: 1rem;
+    }
+
+    &.column-head {
+      text-transform: uppercase;
+      color: #cdd;
+      font-weight: 700;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.payment-form {
+  form {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.25rem;
+  }
+}

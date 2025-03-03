@@ -4,7 +4,6 @@ interface Values {
   grid: GridResult;
   letter: string;
   letterExpiration: Date;
-  secret: string;
 }
 
 // local state values
@@ -12,7 +11,6 @@ export const values: Values = {
   grid: [],
   letter: '',
   letterExpiration: new Date(),
-  secret: '',
 };
 
 // reset letter and expiration; used for testing

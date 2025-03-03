@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CalculationsService } from './calculations.service';
+import { ApiService } from './api.service';
 
 @Component({
   selector: 'secret',
@@ -10,14 +10,14 @@ export class SecretComponent implements OnInit {
   secret = '';
   isLive = false;
 
-  constructor(private calculationsService: CalculationsService) {}
+  constructor(private apiService: ApiService) {}
 
   ngOnInit() {
-    this.calculationsService.secret$.subscribe((secret) => {
+    this.apiService.secret$.subscribe((secret) => {
       this.secret = secret;
     });
 
-    this.calculationsService.isLive$.subscribe((isLive) => {
+    this.apiService.isLive$.subscribe((isLive) => {
       this.isLive = isLive;
     });
   }
