@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CalculationsService } from './calculations.service';
+import { ApiService } from './api.service';
 import { LetterComponent } from './letter.component';
 import { SecretComponent } from './secret.component';
 
@@ -15,18 +15,18 @@ export class GridComponent implements OnInit {
   // the grid of letters
   grid: string[][] = [];
 
-  constructor(private calculationsService: CalculationsService) {}
+  constructor(private apiService: ApiService) {}
 
   /**
    * Subscribes to the grid observable.
    */
   ngOnInit() {
-    this.calculationsService.grid$.subscribe((grid) => {
+    this.apiService.grid$.subscribe((grid) => {
       this.grid = grid;
     });
   }
 
   onGenerateGrid() {
-    this.calculationsService.startGenerator();
+    this.apiService.startGenerator();
   }
 }

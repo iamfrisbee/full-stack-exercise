@@ -1,11 +1,12 @@
 import { BehaviorSubject } from 'rxjs';
+import { AddPayment, Payment } from 'shared';
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnDestroy } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
-export class CalculationsService implements OnDestroy {
+export class ApiService implements OnDestroy {
   // timers for the polling
   gridTimer: any;
   secretTimer: any;
@@ -74,7 +75,7 @@ export class CalculationsService implements OnDestroy {
    */
   setLetter(letter: string) {
     this.http
-      .post<string[][]>('/api/letter', { letter })
+      .put<string[][]>('/api/letter', { letter })
       .subscribe((grid: string[][]) => {
         this.grid.next(grid);
         this.letter.next(letter);
@@ -88,6 +89,14 @@ export class CalculationsService implements OnDestroy {
     this.http.get<string>('/api/secret').subscribe((secret: string) => {
       this.secret.next(secret);
     });
+  }
+
+  addPayment(payment: AddPayment) {
+    return this.http.post<Payment[]>('/api/payments', payment);
+  }
+
+  getPayments() {
+    return this.http.get<Payment[]>('/api/payments');
   }
 
   /**

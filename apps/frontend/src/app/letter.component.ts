@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { CalculationsService } from './calculations.service';
+import { ApiService } from './api.service';
 
 @Component({
   selector: 'letter',
@@ -11,15 +11,15 @@ import { CalculationsService } from './calculations.service';
 export class LetterComponent implements OnInit {
   letter = '';
 
-  constructor(private calculationsService: CalculationsService) {}
+  constructor(private apiService: ApiService) {}
 
   ngOnInit() {
-    this.calculationsService.letter$.subscribe((letter) => {
+    this.apiService.letter$.subscribe((letter) => {
       this.letter = letter;
     });
   }
 
   onLetterChange(event: any) {
-    this.calculationsService.setLetter(event.key);
+    this.apiService.setLetter(event.key);
   }
 }
