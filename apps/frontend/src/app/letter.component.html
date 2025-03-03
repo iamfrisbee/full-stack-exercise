@@ -1,0 +1,10 @@
+<div class="input-group">
+  <label for="letterInput">character</label>
+  <input
+    id="letterInput"
+    type="text"
+    [(ngModel)]="letter"
+    placeholder="Character"
+    (keypress)="onLetterChange($event)"
+  />
+</div>
